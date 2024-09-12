@@ -5,17 +5,20 @@
         name:'dashboard',
         imageUrl:apps,
         link:'/',
-    },{
+    },
+    {
         name:'records',
         imageUrl:records,
-        link:'/records',
-    },{
+        link:'/medical-records',
+    },
+    {
         name:'screening',
         imageUrl:screening,
-        link:'/screening',
-    },{
-        name:'users',
+        link:'/screening-schedules',
+    },
+    {
+        name:'profile',
         imageUrl:user,
-        link:'/users',
+        link:'/profile',
     }
  ]
