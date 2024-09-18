@@ -73,7 +73,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li
                 key={link.name}
-                className={`flex p-4 ${isActive === link.name ? 'bg-[#3a3a4c]' : ''}`}
+                className={`flex p-4 ${isActive === link.name ? 'bg-[#3a3a4c] text-white font-epilogue font-bold' : ' text-white font-epilogue'}`}
                 onClick={() => {
                   setIsActive(link.name);
                   setToggleDrawer(false);
@@ -87,7 +87,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  );
+  ); 
 };
 
 export default Navbar;
