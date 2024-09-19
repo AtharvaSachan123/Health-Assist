@@ -1,7 +1,8 @@
 import { IconCircleDashedCheck, IconHourglassHigh, IconUserScan } from '@tabler/icons-react';
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import MetricesCard from './MetricesCard';
+
 const DisplayInfo = () => {
   const Navigate = useNavigate();
   const [metrics, setMetrics] = useState({
@@ -12,6 +13,7 @@ const DisplayInfo = () => {
     pendingScreenings: 0,
     overdueScreenings: 0,
   });
+
   const metricsData = [
     {
       title: "Specialist Appointments Pending",
@@ -21,7 +23,6 @@ const DisplayInfo = () => {
       onclick: () => {
         Navigate('/appointments/pending');
       }
-
     },
     {
       title: "Treatment Progress Updates",
@@ -31,7 +32,6 @@ const DisplayInfo = () => {
       onclick: () => {
         Navigate('/folders');
       }
-
     },
     {
       title: "Total Folders",
@@ -41,7 +41,6 @@ const DisplayInfo = () => {
       onclick: () => {
         Navigate('/folders');
       }
-
     },
     {
       title: "Total Screenings",
@@ -51,7 +50,6 @@ const DisplayInfo = () => {
       onclick: () => {
         Navigate('/screening');
       }
-
     },
     {
       title: "Completed Screenings",
@@ -61,7 +59,6 @@ const DisplayInfo = () => {
       onclick: () => {
         Navigate('/screening/completed');
       }
-
     },
     {
       title: "Pending Screenings",
@@ -71,7 +68,6 @@ const DisplayInfo = () => {
       onclick: () => {
         Navigate('/screening/pending');
       }
-
     },
     {
       title: "Overdue Screenings",
@@ -81,11 +77,30 @@ const DisplayInfo = () => {
       onclick: () => {
         Navigate('/screening/overdue');
       }
-
     },
   ];
 
+  return (
+    <div className='flex flex-wrap gap-[26px]'>
+      <div className='mt-7 grid w-full gap-4 grid-cols-2 sm:gap-6 lg:grid-cols-2'>
+        {metricsData.slice(0, 2).map((metric) => (
+          <MetricesCard
+            key={metric.title}
+            {...metric}
+          />
+        ))}
+      </div>
 
-}
+      <div className='mt-[9px] grid w-full gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4'>
+        {metricsData.slice(2, 6).map((metric) => (
+          <MetricesCard
+            key={metric.title}
+            {...metric}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default DisplayInfo
+export default DisplayInfo;

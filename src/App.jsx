@@ -1,7 +1,9 @@
-import React from 'react'
-import {Route, Routes,} from 'react-router-dom'
-import SideBar from './components/SideBar'
-import Navbar from './components/Navbar'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import SideBar from './components/SideBar';
+import Navbar from './components/Navbar';
+
+import Home from './pages/Home';
 
 const App = () => {
   return (
@@ -9,15 +11,15 @@ const App = () => {
       <div className="hidded relative mr-10 hidden sm:flex">
         <SideBar />
       </div>
-        
-        <div className='mx-auto max-w-[1280px] flex-1 max-sm:w-full sm:p-5 '>
-            <Navbar/>
-        <Routes>
-            <Route path='/' element={<div className='text-white'>adbhabhwhj</div>} />
-        </Routes>
-        </div>
-        </div>
-  )
-}
 
-export default App
+      <div className='mx-auto max-w-[1280px] flex-1 max-sm:w-full sm:p-5 '>
+        <Navbar />
+        <Routes>
+          <Route path ='/' element={<Home />} />
+        </Routes>
+      </div>
+    </div>
+  );
+};
+
+export default App;
