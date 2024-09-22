@@ -4,6 +4,7 @@ import SideBar from './components/SideBar';
 import Navbar from './components/Navbar';
 
 import Home from './pages/Home';
+import OnBoarding from './pages/OnBoarding';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path ='/' element={<Home />} />
+          <Route path ='/onboarding' element={<OnBoarding />} />
         </Routes>
       </div>
     </div>
