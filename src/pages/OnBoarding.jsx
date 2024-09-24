@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
+import { useStateContext } from '../context';
+
+import { usePrivy } from '@privy-io/react-auth';
+
 
 const OnBoarding = () => {
     const [username, setUsername] = useState('');
     const [age, setAge] = useState('');
     const [location, setLocation] = useState('');
 
+    // const { createUser } = useStateContext();
+    // const { user } = usePrivy();
+
     const handleOnboarding = async(e) => {
         e.preventDefault();
 
-        const user = {
-            username,
-            age,
-            location
-        };
+        // const userData = {
+        //     username,
+        //     age: parseInt(age,10),
+        //     location,
+        //     createdBy:user.email.address,
+        // };
 
-        console.log(user);
+        // const newUser = await createUser(userData);
+
+        // console.log(user);
     };
 
     return (
